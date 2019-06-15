@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Poetic Dust</title>
+
+
+</head>
+
+<style>
+* {
+	font-family: helvetica;
+	color:#ccc;
+}
+
+body{
+	background-image: url("img/bg3.jpg");
+	/*background: #FFF url('img/bg2.jpg') no-repeat center top scroll;*/
+	background-color:#000;
+}
+
+.container{
+	margin: 0 auto;
+	padding: 0;
+	width: 900px;
+}
+.clear{
+	clear:both;
+}
+.v{
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+video{
+	padding: 0;
+	margin: 0;
+}
+
+.header{
+  width: 100%;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 90px;
+}
+
+.footer{
+  font-size: 0.75em;
+  width: 900px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+</style>
+<body>
+
+	<div class="header">
+		<h1 class="conter">P O E T I C  D U S T</h1>
+		<p>"poetic dust" is communication using video.</p>
+	</div>
+
+	<div id="video-container" class="container">
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="footer container">
+		<p>© 2019 Shinsekai. </p>
+		<p><small>本ウェブサイトが提供するWWWサイトに掲載された文章、画像、図面、プログラムなど各種データは、特に記載がない限り新世界が保有しています。</small></p>
+	</div>
+
+	<script>
+		var parent = document.getElementById("video-container");
+		
+		for (var i = 1; i <= 92; i++) {
+			var video_elem = document.createElement( "div" ) ;
+			video_elem.className = "v"
+
+			var no = ('000' + i).slice(-3);
+
+			video_elem.innerHTML = ` \
+			<video poster='media/thumb/poeticdust-1905_${no}-thumb001.jpg' width='300' height="165" \
+				controls preload="none"> \
+				<source src='media/video/poeticdust-1905_${no}.mp4' /> \
+				<p>poeticdust-1905_${no}</p> \
+			</video>`;
+
+
+			parent.appendChild(video_elem);
+
+		}
+
+		var clearfix = document.createElement("div");
+		clearfix.className = "clear";
+		parent.appendChild(clearfix);
+
+	</script>
+
+</body>
+</html>
